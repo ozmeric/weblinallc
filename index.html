@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weblina LLC — Web, Automation & AI for Small Business</title>
+  <meta name="description" content="Weblina LLC helps small businesses build modern websites, automate repetitive tasks, and implement AI solutions that save time and drive growth." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:    #0d1f3c;
+      --navy2:   #0a1628;
+      --navy3:   #1e3a5f;
+      --gold:    #c4900f;
+      --gold2:   #d4a017;
+      --gold-lt: #fef3d0;
+      --bg:      #ffffff;
+      --bg2:     #f5f7fa;
+      --bg3:     #eef1f6;
+      --text:    #0d1f3c;
+      --muted:   #526080;
+      --border:  #dde3ee;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ── NAV ── */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(10px);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 clamp(1.5rem, 5vw, 4rem);
+      height: 68px;
+      border-bottom: 1px solid var(--border);
+      box-shadow: 0 1px 12px rgba(13,31,60,0.06);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+
+    .nav-logo-icon {
+      width: 36px; height: 36px;
+      background: var(--navy2);
+      border: 1.5px solid var(--gold2);
+      border-radius: 7px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .nav-logo-text {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: var(--navy);
+      letter-spacing: -0.3px;
+    }
+
+    .nav-logo-text span {
+      color: var(--gold);
+      font-size: 0.6rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      margin-left: 3px;
+      vertical-align: super;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.875rem;
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+
+    .nav-links a:hover { color: var(--navy); }
+
+    .nav-cta {
+      background: var(--navy) !important;
+      color: #fff !important;
+      padding: 0.5rem 1.25rem !important;
+      border-radius: 7px !important;
+      font-weight: 600 !important;
+      transition: background 0.2s !important;
+    }
+
+    .nav-cta:hover { background: var(--navy3) !important; color: #fff !important; }
+
+    /* ── HERO ── */
+    #hero {
+      min-height: 100vh;
+      background: linear-gradient(160deg, #f0f4ff 0%, #ffffff 55%, #fffbf0 100%);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      padding: 100px clamp(1.5rem, 5vw, 4rem) 60px;
+      gap: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    #hero::before {
+      content: '';
+      position: absolute;
+      top: -60px; right: -80px;
+      width: 520px; height: 520px;
+      background: radial-gradient(circle, rgba(196,144,15,0.07) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    #hero::after {
+      content: '';
+      position: absolute;
+      bottom: -60px; left: -80px;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(13,31,60,0.04) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--gold-lt);
+      border: 1px solid rgba(196,144,15,0.3);
+      color: var(--gold);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 5px 14px;
+      border-radius: 100px;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-eyebrow::before {
+      content: '';
+      width: 6px; height: 6px;
+      background: var(--gold);
+      border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    .hero-headline {
+      font-family: 'DM Serif Display', Georgia, serif;
+      font-size: clamp(2.4rem, 4.5vw, 3.7rem);
+      line-height: 1.13;
+      color: var(--navy);
+      margin-bottom: 1.25rem;
+      letter-spacing: -0.5px;
+    }
+
+    .hero-headline em {
+      font-style: normal;
+      color: var(--gold);
+    }
+
+    .hero-sub {
+      color: var(--muted);
+      font-size: 1.05rem;
+      max-width: 440px;
+      margin-bottom: 2.25rem;
+      line-height: 1.75;
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-primary {
+      background: var(--navy);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-block;
+      transition: background 0.2s, transform 0.15s;
+    }
+
+    .btn-primary:hover { background: var(--navy3); transform: translateY(-1px); }
+
+    .btn-secondary {
+      color: var(--navy);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      padding: 0.8rem 1.8rem;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      text-decoration: none;
+      display: inline-block;
+      transition: border-color 0.2s, background 0.2s;
+      background: var(--bg);
+    }
+
+    .btn-secondary:hover { border-color: var(--navy); background: var(--bg2); }
+
+    /* Terminal widget */
+    .terminal {
+      background: var(--navy2);
+      border: 1px solid rgba(212,160,23,0.25);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(13,31,60,0.15), 0 4px 16px rgba(13,31,60,0.08);
+      font-family: 'Courier New', monospace;
+    }
+
+    .terminal-bar {
+      background: rgba(255,255,255,0.06);
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(212,160,23,0.12);
+    }
+
+    .terminal-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .terminal-dot:nth-child(1) { background: #ff5f56; }
+    .terminal-dot:nth-child(2) { background: #ffbd2e; }
+    .terminal-dot:nth-child(3) { background: #27c93f; }
+
+    .terminal-title { color: rgba(248,240,216,0.4); font-size: 0.75rem; margin-left: 8px; }
+
+    .terminal-body {
+      padding: 1.4rem 1.6rem;
+      min-height: 280px;
+      font-size: 0.83rem;
+      line-height: 1.8;
+    }
+
+    .t-prompt { color: #d4a017; }
+    .t-cmd    { color: #f8f0d8; }
+    .t-output { color: #64d98a; }
+    .t-accent { color: #7dd3fc; }
+
+    .cursor {
+      display: inline-block;
+      width: 8px; height: 1em;
+      background: #d4a017;
+      vertical-align: text-bottom;
+      animation: blink 1s step-end infinite;
+    }
+
+    @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+
+    .terminal-line { opacity: 0; transition: opacity 0.4s; }
+    .terminal-line.show { opacity: 1; }
+
+    /* ── TRUST BAR ── */
+    .trust-bar {
+      background: var(--bg2);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .trust-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .trust-items {
+      display: flex;
+      gap: 2.5rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--navy);
+    }
+
+    .trust-item svg { color: var(--gold); flex-shrink: 0; }
+
+    /* ── SECTIONS ── */
+    section { padding: 88px clamp(1.5rem, 5vw, 4rem); }
+
+    .section-eyebrow {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 0.75rem;
+    }
+
+    .section-heading {
+      font-family: 'DM Serif Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      color: var(--navy);
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      max-width: 520px;
+    }
+
+    .section-sub {
+      color: var(--muted);
+      font-size: 1rem;
+      max-width: 520px;
+      line-height: 1.75;
+      margin-bottom: 3rem;
+    }
+
+    /* ── SERVICES ── */
+    #services { background: var(--bg); }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-top: 4px solid var(--gold);
+      border-radius: 12px;
+      padding: 2rem;
+      transition: box-shadow 0.2s, transform 0.2s;
+    }
+
+    .service-card:hover {
+      box-shadow: 0 12px 36px rgba(13,31,60,0.09);
+      transform: translateY(-3px);
+    }
+
+    .service-icon {
+      width: 48px; height: 48px;
+      background: var(--gold-lt);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.25rem;
+      color: var(--gold);
+    }
+
+    .service-title {
+      font-weight: 700;
+      font-size: 1.05rem;
+      color: var(--navy);
+      margin-bottom: 0.5rem;
+    }
+
+    .service-desc {
+      color: var(--muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      margin-bottom: 1.25rem;
+    }
+
+    .service-bullets {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+
+    .service-bullets li {
+      font-size: 0.85rem;
+      color: var(--navy);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .service-bullets li::before {
+      content: '→';
+      color: var(--gold);
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    /* ── HOW IT WORKS ── */
+    #process { background: var(--bg2); }
+
+    .process-steps {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 0;
+      position: relative;
+    }
+
+    .process-steps::before {
+      content: '';
+      position: absolute;
+      top: 28px; left: 7%; right: 7%;
+      height: 1.5px;
+      background: linear-gradient(to right, var(--gold), var(--border));
+      z-index: 0;
+    }
+
+    .process-step {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      padding: 0 1.5rem 0 0;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step-num {
+      width: 56px; height: 56px;
+      background: var(--navy);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(13,31,60,0.18);
+    }
+
+    .step-title {
+      font-weight: 700;
+      color: var(--navy);
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .step-desc {
+      color: var(--muted);
+      font-size: 0.875rem;
+      line-height: 1.65;
+    }
+
+    /* ── WHY ── */
+    #why { background: var(--bg); }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5rem;
+      align-items: center;
+    }
+
+    .why-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .why-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .why-check {
+      width: 24px; height: 24px;
+      background: var(--gold);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    .why-item-text strong {
+      display: block;
+      font-weight: 600;
+      color: var(--navy);
+      margin-bottom: 2px;
+    }
+
+    .why-item-text span { color: var(--muted); font-size: 0.9rem; }
+
+    .stats-block {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.25rem;
+    }
+
+    .stat-card {
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 1.75rem 1.5rem;
+    }
+
+    .stat-num {
+      font-family: 'DM Serif Display', serif;
+      font-size: 2.4rem;
+      color: var(--navy);
+      line-height: 1;
+      margin-bottom: 0.4rem;
+    }
+
+    .stat-num span { color: var(--gold); }
+
+    .stat-label { color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
+
+    /* ── CONTACT ── */
+    #contact { background: var(--bg2); border-top: 1px solid var(--border); }
+
+    .contact-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.3fr;
+      gap: 5rem;
+      align-items: start;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+    }
+
+    .contact-icon {
+      width: 40px; height: 40px;
+      background: var(--gold-lt);
+      border: 1px solid rgba(196,144,15,0.2);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--gold);
+    }
+
+    .contact-item-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2px;
+    }
+
+    .contact-item-val { color: var(--navy); font-size: 0.95rem; font-weight: 500; }
+
+    .contact-form {
+      background: var(--bg);
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      box-shadow: 0 4px 24px rgba(13,31,60,0.06);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1rem;
+    }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+
+    .field label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--navy);
+      letter-spacing: 0.3px;
+    }
+
+    .field input,
+    .field select,
+    .field textarea {
+      background: var(--bg2);
+      border: 1.5px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9rem;
+      padding: 0.7rem 1rem;
+      transition: border-color 0.2s, background 0.2s;
+      outline: none;
+      width: 100%;
+    }
+
+    .field input::placeholder,
+    .field textarea::placeholder { color: #aab4c8; }
+
+    .field input:focus,
+    .field select:focus,
+    .field textarea:focus {
+      border-color: var(--navy);
+      background: var(--bg);
+    }
+
+    .field textarea { resize: vertical; min-height: 120px; }
+
+    .form-submit {
+      background: var(--navy);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      padding: 0.9rem 2rem;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.15s;
+      margin-top: 0.25rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      width: fit-content;
+    }
+
+    .form-submit:hover { background: var(--navy3); transform: translateY(-1px); }
+    .form-submit:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    #form-status { font-size: 0.875rem; margin-top: 0.25rem; min-height: 1.2em; }
+    #form-status.success { color: #166534; }
+    #form-status.error   { color: #991b1b; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--navy2);
+      border-top: 1px solid rgba(212,160,23,0.12);
+      padding: 2rem clamp(1.5rem, 5vw, 4rem);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .footer-copy { color: rgba(248,240,216,0.4); font-size: 0.8rem; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 900px) {
+      #hero { grid-template-columns: 1fr; padding-top: 120px; }
+      .terminal { display: none; }
+      .services-grid { grid-template-columns: 1fr; }
+      .process-steps { grid-template-columns: 1fr 1fr; gap: 2rem; }
+      .process-steps::before { display: none; }
+      .why-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+      .contact-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
+      .form-row { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+    }
+
+    @keyframes spin { to { transform: rotate(360deg); } }
+  </style>
+</head>
+<body>
+
+<!-- ── NAV ── -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="nav-logo-icon">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+        <path d="M4 4 L8.5 18 L11 10.5 L13.5 18 L18 4" stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text">Weblina<span>LLC</span></div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#process">How It Works</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
+  </ul>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">Web · Automation · AI</div>
+    <h1 class="hero-headline">
+      Modern tech for<br />
+      <em>small businesses</em><br />
+      that think big.
+    </h1>
+    <p class="hero-sub">
+      Weblina LLC builds professional websites, automates the tasks slowing you down, and deploys AI tools that work while you sleep — without the enterprise price tag.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Start a Project</a>
+      <a href="#services" class="btn-secondary">See What We Do</a>
+    </div>
+  </div>
+
+  <div class="terminal">
+    <div class="terminal-bar">
+      <div class="terminal-dot"></div>
+      <div class="terminal-dot"></div>
+      <div class="terminal-dot"></div>
+      <span class="terminal-title">weblina — live preview</span>
+    </div>
+    <div class="terminal-body" id="terminal-body"></div>
+  </div>
+</section>
+
+<!-- ── TRUST BAR ── -->
+<div class="trust-bar">
+  <span class="trust-label">Built to deliver</span>
+  <div class="trust-items">
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.354 5.646l-4 4a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7 8.586l3.646-3.647a.5.5 0 0 1 .708.708z"/></svg>
+      Fast, mobile-first websites
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.354 5.646l-4 4a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7 8.586l3.646-3.647a.5.5 0 0 1 .708.708z"/></svg>
+      No bloated subscriptions
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.354 5.646l-4 4a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7 8.586l3.646-3.647a.5.5 0 0 1 .708.708z"/></svg>
+      Based in Virginia · Available everywhere
+    </div>
+    <div class="trust-item">
+      <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0zm3.354 5.646l-4 4a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7 8.586l3.646-3.647a.5.5 0 0 1 .708.708z"/></svg>
+      Owned and operated by real humans
+    </div>
+  </div>
+</div>
+
+<!-- ── SERVICES ── -->
+<section id="services">
+  <div class="section-eyebrow">What We Do</div>
+  <h2 class="section-heading">Three ways we help your business grow</h2>
+  <p class="section-sub">Whether you need a new website, fewer manual tasks, or your first AI tool — we start with your goals and build from there.</p>
+
+  <div class="services-grid">
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/>
+        </svg>
+      </div>
+      <div class="service-title">Website Design & Development</div>
+      <p class="service-desc">A website that looks great, loads fast, and turns visitors into customers — without paying monthly for a platform you don't own.</p>
+      <ul class="service-bullets">
+        <li>New site builds &amp; redesigns</li>
+        <li>Landing pages &amp; lead capture</li>
+        <li>Contact forms &amp; booking integrations</li>
+        <li>Google-ready SEO foundations</li>
+        <li>GitHub Pages &amp; custom domain hosting</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M12 2v4m0 12v4M4.93 4.93l2.83 2.83m8.48 8.48 2.83 2.83M2 12h4m12 0h4M4.93 19.07l2.83-2.83m8.48-8.48 2.83-2.83"/>
+        </svg>
+      </div>
+      <div class="service-title">Business Automation</div>
+      <p class="service-desc">Stop doing the same thing twice. We connect your apps and automate repetitive work so your team can focus on what actually matters.</p>
+      <ul class="service-bullets">
+        <li>Email &amp; calendar automation</li>
+        <li>Google Workspace workflows</li>
+        <li>CRM &amp; pipeline automation</li>
+        <li>Form-to-spreadsheet pipelines</li>
+        <li>Custom dashboards &amp; reporting</li>
+      </ul>
+    </div>
+
+    <div class="service-card">
+      <div class="service-icon">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/>
+        </svg>
+      </div>
+      <div class="service-title">AI Solutions</div>
+      <p class="service-desc">Practical AI that fits your actual workflow — not a demo. We build tools your team will use, from smart assistants to document processing.</p>
+      <ul class="service-bullets">
+        <li>AI chatbots for your website</li>
+        <li>Document &amp; email summarization</li>
+        <li>Lead qualification assistants</li>
+        <li>Custom prompt workflows</li>
+        <li>AI-enhanced reporting tools</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ── PROCESS ── -->
+<section id="process">
+  <div class="section-eyebrow">How It Works</div>
+  <h2 class="section-heading">From first call to live in weeks, not months</h2>
+  <p class="section-sub">We run a tight process so you always know what's happening and nothing drags on.</p>
+
+  <div class="process-steps">
+    <div class="process-step">
+      <div class="step-num">1</div>
+      <div class="step-title">Discovery Call</div>
+      <p class="step-desc">We learn your business, your goals, and what's currently slowing you down. No jargon, no pressure.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">2</div>
+      <div class="step-title">Proposal & Scope</div>
+      <p class="step-desc">You get a clear plan with fixed deliverables and a flat project price — no hourly surprises.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">3</div>
+      <div class="step-title">Build & Iterate</div>
+      <p class="step-desc">We build fast and share progress early so you can give feedback when it still matters.</p>
+    </div>
+    <div class="process-step">
+      <div class="step-num">4</div>
+      <div class="step-title">Launch & Support</div>
+      <p class="step-desc">We handle deployment, train your team, and stay available for questions after you go live.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── WHY ── -->
+<section id="why">
+  <div class="why-grid">
+    <div>
+      <div class="section-eyebrow">Why Weblina</div>
+      <h2 class="section-heading">We treat small business budgets with respect</h2>
+      <p class="section-sub">Big agencies overbuild and oversell. Freelancers disappear. We're the in-between: accountable, experienced, and priced for businesses that aren't Fortune 500.</p>
+
+      <ul class="why-list">
+        <li class="why-item">
+          <div class="why-check">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg>
+          </div>
+          <div class="why-item-text">
+            <strong>Flat-rate projects</strong>
+            <span>You know the total cost before we start. No hourly billing, no scope creep surprises.</span>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg>
+          </div>
+          <div class="why-item-text">
+            <strong>You own everything</strong>
+            <span>Code, content, accounts — all yours. No vendor lock-in, ever.</span>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg>
+          </div>
+          <div class="why-item-text">
+            <strong>Real-world AI experience</strong>
+            <span>We use AI in our own operations daily. We know what works and what's hype.</span>
+          </div>
+        </li>
+        <li class="why-item">
+          <div class="why-check">
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="2,6 5,9 10,3"/></svg>
+          </div>
+          <div class="why-item-text">
+            <strong>Fast turnaround</strong>
+            <span>Most projects ship in 2–4 weeks. We move quickly without cutting corners.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <div class="stats-block">
+      <div class="stat-card">
+        <div class="stat-num">2–4<span style="font-size:1.2rem">wk</span></div>
+        <div class="stat-label">Typical time from kickoff to a live, working website</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">$<span>0</span></div>
+        <div class="stat-label">Monthly platform fees for sites hosted on GitHub Pages</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">3<span>-in-1</span></div>
+        <div class="stat-label">Web design, automation, and AI — one partner for all three</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-num">100<span>%</span></div>
+        <div class="stat-label">Ownership of your code, content, and accounts — always</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CONTACT ── -->
+<section id="contact">
+  <div class="contact-wrapper">
+    <div>
+      <div class="section-eyebrow">Get in Touch</div>
+      <h2 class="section-heading">Let's talk about what you're building</h2>
+      <p class="section-sub">Tell us about your business and what you need. We'll follow up within one business day to set up a free 30-minute discovery call.</p>
+
+      <div class="contact-info">
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Email</div>
+            <div class="contact-item-val">hello@weblina.com</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Location</div>
+            <div class="contact-item-val">Based in Virginia · Available everywhere</div>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-icon">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <div>
+            <div class="contact-item-label">Response time</div>
+            <div class="contact-item-val">Within 1 business day</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form class="contact-form" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="name">Your Name</label>
+          <input type="text" id="name" name="name" placeholder="Jane Smith" required />
+        </div>
+        <div class="field">
+          <label for="business">Business Name</label>
+          <input type="text" id="business" name="business" placeholder="Smith & Co." />
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="jane@example.com" required />
+        </div>
+        <div class="field">
+          <label for="phone">Phone (optional)</label>
+          <input type="tel" id="phone" name="phone" placeholder="(804) 555-0100" />
+        </div>
+      </div>
+      <div class="field">
+        <label for="service">What do you need help with?</label>
+        <select id="service" name="service">
+          <option value="">— Select a service —</option>
+          <option value="website">Website Design / Redesign</option>
+          <option value="automation">Business Automation</option>
+          <option value="ai">AI Solutions</option>
+          <option value="multiple">Multiple services</option>
+          <option value="unsure">Not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="message">Tell us about your project</label>
+        <textarea id="message" name="message" placeholder="What's your business, what problem are you trying to solve, and what does success look like?"></textarea>
+      </div>
+      <button type="submit" class="form-submit" id="submitBtn">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/>
+        </svg>
+        Send Message
+      </button>
+      <div id="form-status"></div>
+    </form>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-brand">
+    <div class="nav-logo-icon" style="width:28px;height:28px;border-radius:5px;">
+      <svg width="16" height="16" viewBox="0 0 22 22" fill="none">
+        <path d="M4 4 L8.5 18 L11 10.5 L13.5 18 L18 4" stroke="#d4a017" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <span style="color:#f8f0d8;font-weight:700;font-size:0.9rem;">Weblina <span style="color:#d4a017;font-size:0.6rem;font-weight:500;letter-spacing:2px;">LLC</span></span>
+  </div>
+  <span class="footer-copy">© 2025 Weblina LLC · Web, Automation & AI for Small Business</span>
+  <span class="footer-copy">Based in Virginia · Available everywhere</span>
+</footer>
+
+<script>
+  const sequences = [
+    [
+      { type: 'prompt', text: '$ weblina build --client "main-street-bakery"' },
+      { type: 'output', text: '✓ Generating mobile-first layout...' },
+      { type: 'output', text: '✓ Wiring contact form → Google Sheets...' },
+      { type: 'output', text: '✓ Optimizing images (WebP, lazy load)...' },
+      { type: 'output', text: '✓ Deploying to GitHub Pages...' },
+      { type: 'accent', text: '🚀 Site live: mainstreetbakery.com' },
+    ],
+    [
+      { type: 'prompt', text: '$ weblina automate --workflow "new-lead"' },
+      { type: 'output', text: '✓ Form submission received...' },
+      { type: 'output', text: '✓ Added to CRM pipeline...' },
+      { type: 'output', text: '✓ Follow-up email scheduled (24h)...' },
+      { type: 'output', text: '✓ Slack notification sent to owner...' },
+      { type: 'accent', text: '⚡ Zero manual steps. All automated.' },
+    ],
+    [
+      { type: 'prompt', text: '$ weblina ai --task "quote-assistant"' },
+      { type: 'output', text: '✓ Training on your service catalog...' },
+      { type: 'output', text: '✓ Embedding pricing rules...' },
+      { type: 'output', text: '✓ Connecting to your website chat...' },
+      { type: 'output', text: '✓ Testing with 50 sample questions...' },
+      { type: 'accent', text: '🤖 AI assistant answering leads 24/7.' },
+    ],
+  ];
+
+  let seqIdx = 0;
+  const termBody = document.getElementById('terminal-body');
+
+  function runSequence(seq) {
+    termBody.innerHTML = '';
+    let delay = 0;
+    seq.forEach((line, i) => {
+      const div = document.createElement('div');
+      div.classList.add('terminal-line');
+      const cls = line.type === 'prompt' ? 't-prompt' : line.type === 'accent' ? 't-accent' : 't-output';
+      div.innerHTML = `<span class="${cls}">${line.text}</span>`;
+      if (i === seq.length - 1) div.innerHTML += ' <span class="cursor"></span>';
+      termBody.appendChild(div);
+      setTimeout(() => div.classList.add('show'), delay);
+      delay += 550;
+    });
+    setTimeout(() => { seqIdx = (seqIdx + 1) % sequences.length; runSequence(sequences[seqIdx]); }, delay + 2800);
+  }
+
+  runSequence(sequences[0]);
+
+  // Contact form
+  const APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
+  const form = document.getElementById('contactForm');
+  const submitBtn = document.getElementById('submitBtn');
+  const statusEl = document.getElementById('form-status');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const name  = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    if (!name || !email) { statusEl.textContent = 'Please fill in your name and email.'; statusEl.className = 'error'; return; }
+
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="animation:spin 1s linear infinite"><path d="M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0z" opacity=".25"/><path d="M21 12a9 9 0 0 0-9-9"/></svg> Sending…`;
+    statusEl.textContent = '';
+
+    const payload = { name, email, business: document.getElementById('business').value.trim(), phone: document.getElementById('phone').value.trim(), service: document.getElementById('service').value, message: document.getElementById('message').value.trim(), timestamp: new Date().toISOString() };
+
+    try {
+      await fetch(APPS_SCRIPT_URL, { method: 'POST', mode: 'no-cors', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(payload) });
+      statusEl.textContent = '✓ Message sent! We\'ll be in touch within one business day.';
+      statusEl.className = 'success';
+      form.reset();
+    } catch (err) {
+      statusEl.textContent = 'Something went wrong. Please email us directly at hello@weblina.com';
+      statusEl.className = 'error';
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message`;
+    }
+  });
+</script>
+</body>
+</html>
