@@ -548,213 +548,6 @@
 
     .stat-label { color: var(--muted); font-size: 0.85rem; line-height: 1.4; }
 
-    /* ── BUILDFLOW ── */
-    #buildflow { background: var(--navy); }
-    #buildflow .section-eyebrow { color: var(--gold); }
-    #buildflow .section-heading { color: var(--cream, #f8f0d8); }
-    #buildflow .section-sub { color: rgba(248,240,216,0.65); }
-
-    .bf-wrapper {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 5rem;
-      align-items: center;
-    }
-
-    .bf-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      background: rgba(212,160,23,0.12);
-      border: 1px solid rgba(212,160,23,0.3);
-      color: var(--gold2);
-      font-size: 0.72rem;
-      font-weight: 700;
-      letter-spacing: 1.5px;
-      text-transform: uppercase;
-      padding: 4px 12px;
-      border-radius: 100px;
-      margin-bottom: 0.75rem;
-    }
-
-    .bf-logo-mark {
-      display: inline-flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 1.5rem;
-    }
-
-    .bf-logo-icon {
-      width: 52px; height: 52px;
-      background: var(--gold2);
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .bf-logo-name {
-      font-family: 'DM Serif Display', serif;
-      font-size: 2rem;
-      color: #f8f0d8;
-      letter-spacing: -0.5px;
-      line-height: 1;
-    }
-
-    .bf-logo-name span {
-      display: block;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 600;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gold2);
-      margin-top: 3px;
-    }
-
-    .bf-desc {
-      color: rgba(248,240,216,0.65);
-      font-size: 1rem;
-      line-height: 1.75;
-      margin-bottom: 2rem;
-      max-width: 460px;
-    }
-
-    .bf-features {
-      list-style: none;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0.75rem;
-      margin-bottom: 2rem;
-    }
-
-    .bf-features li {
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
-      font-size: 0.875rem;
-      color: rgba(248,240,216,0.8);
-    }
-
-    .bf-features li::before {
-      content: '✓';
-      color: var(--gold2);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    .bf-cta {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--gold2);
-      color: var(--navy);
-      font-weight: 700;
-      font-size: 0.95rem;
-      padding: 0.8rem 1.8rem;
-      border-radius: 8px;
-      text-decoration: none;
-      transition: background 0.2s, transform 0.15s;
-    }
-
-    .bf-cta:hover { background: #e8b820; transform: translateY(-1px); }
-
-    .bf-screen {
-      background: var(--navy2);
-      border: 1px solid rgba(212,160,23,0.2);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 24px 60px rgba(0,0,0,0.35);
-    }
-
-    .bf-screen-bar {
-      background: rgba(255,255,255,0.04);
-      border-bottom: 1px solid rgba(212,160,23,0.1);
-      padding: 10px 16px;
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .bf-dot { width: 9px; height: 9px; border-radius: 50%; }
-    .bf-dot:nth-child(1) { background: #ff5f56; }
-    .bf-dot:nth-child(2) { background: #ffbd2e; }
-    .bf-dot:nth-child(3) { background: #27c93f; }
-
-    .bf-screen-title {
-      color: rgba(248,240,216,0.35);
-      font-size: 0.72rem;
-      margin-left: 8px;
-      font-family: 'Courier New', monospace;
-    }
-
-    .bf-screen-body { padding: 1.25rem 1.5rem; }
-
-    .bf-stat-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 0.75rem;
-      margin-bottom: 1rem;
-    }
-
-    .bf-stat {
-      background: rgba(255,255,255,0.04);
-      border: 1px solid rgba(212,160,23,0.1);
-      border-radius: 8px;
-      padding: 0.75rem;
-      text-align: center;
-    }
-
-    .bf-stat-num {
-      font-family: 'DM Serif Display', serif;
-      font-size: 1.4rem;
-      color: var(--gold2);
-      line-height: 1;
-      margin-bottom: 3px;
-    }
-
-    .bf-stat-lbl {
-      font-size: 0.68rem;
-      color: rgba(248,240,216,0.4);
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-    }
-
-    .bf-project-list { display: flex; flex-direction: column; gap: 0.5rem; }
-
-    .bf-project-row {
-      background: rgba(255,255,255,0.03);
-      border: 1px solid rgba(255,255,255,0.06);
-      border-radius: 7px;
-      padding: 0.6rem 0.9rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .bf-project-name { font-size: 0.82rem; color: #f8f0d8; font-weight: 500; }
-    .bf-project-meta { font-size: 0.72rem; color: rgba(248,240,216,0.4); }
-
-    .bf-pill {
-      font-size: 0.65rem;
-      font-weight: 600;
-      padding: 2px 8px;
-      border-radius: 100px;
-      letter-spacing: 0.5px;
-    }
-
-    .bf-pill-active { background: rgba(100,217,138,0.15); color: #64d98a; }
-    .bf-pill-review { background: rgba(212,160,23,0.15); color: #d4a017; }
-    .bf-pill-done   { background: rgba(125,211,252,0.15); color: #7dd3fc; }
-
-    @media (max-width: 900px) {
-      .bf-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
-      .bf-screen { display: none; }
-      .bf-features { grid-template-columns: 1fr; }
-    }
-
     /* ── CONTACT ── */
     #contact { background: var(--bg2); border-top: 1px solid var(--border); }
 
@@ -931,7 +724,6 @@
     <li><a href="#services">Services</a></li>
     <li><a href="#process">How It Works</a></li>
     <li><a href="#why">Why Us</a></li>
-    <li><a href="#buildflow">BuildFlow</a></li>
     <li><a href="#contact" class="nav-cta">Get in Touch</a></li>
   </ul>
 </nav>
@@ -953,11 +745,6 @@
       <a href="#services" class="btn-secondary">See What We Do</a>
     </div>
 
-    <a href="#buildflow" style="display:inline-flex;align-items:center;gap:10px;margin-top:1.75rem;text-decoration:none;background:rgba(196,144,15,0.08);border:1px solid rgba(196,144,15,0.25);border-radius:8px;padding:0.6rem 1rem;max-width:fit-content;transition:background 0.2s;" onmouseover="this.style.background='rgba(196,144,15,0.14)'" onmouseout="this.style.background='rgba(196,144,15,0.08)'">
-      <span style="background:#c4900f;color:#fff;font-size:0.62rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:2px 8px;border-radius:100px;white-space:nowrap;">New</span>
-      <span style="font-size:0.85rem;font-weight:600;color:#0d1f3c;">Introducing BuildFlow — project management for contractors &amp; investors</span>
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#c4900f" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" style="flex-shrink:0"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-    </a>
   </div>
 
   <div class="terminal">
@@ -1153,110 +940,6 @@
   </div>
 </section>
 
-<!-- ── BUILDFLOW ── -->
-<section id="buildflow">
-  <div class="bf-wrapper">
-    <div>
-      <div class="bf-badge">Featured Product</div>
-      <div class="bf-logo-mark">
-        <div class="bf-logo-icon">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="none" stroke="#0d1f3c" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M4 20 L4 10 L14 4 L24 10 L24 20 L14 26 Z"/>
-            <path d="M4 10 L14 16 L24 10"/>
-            <line x1="14" y1="16" x2="14" y2="26"/>
-          </svg>
-        </div>
-        <div>
-          <div class="bf-logo-name">BuildFlow<span>by Weblina LLC</span></div>
-        </div>
-      </div>
-
-      <p class="bf-desc">A done-for-you project management tool built specifically for fix &amp; flip investors, general contractors, and small construction companies — and configured to match how <em>your</em> business actually works. Your categories, your project types, your branding. We set it all up before you ever log in.</p>
-
-      <ul class="bf-features">
-        <li>Project dashboard &amp; pipeline</li>
-        <li>Budget &amp; expense tracking</li>
-        <li>Task management with priorities</li>
-        <li>Vendor &amp; sub-contractor directory</li>
-        <li>Milestone &amp; timeline planning</li>
-        <li>Quote &amp; bid tracking</li>
-        <li>Installable mobile app (PWA)</li>
-        <li>Your data in your Google Sheet</li>
-        <li>Branded with your company name &amp; colors</li>
-        <li>Custom project types for your trade</li>
-        <li>Your expense &amp; task categories</li>
-        <li>Configured for how you actually work</li>
-      </ul>
-
-      <div style="background:rgba(212,160,23,0.08);border:1px solid rgba(212,160,23,0.2);border-radius:10px;padding:1rem 1.25rem;margin-bottom:1.75rem;">
-        <div style="font-size:0.72rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#d4a017;margin-bottom:0.4rem;">Fully Customized For You</div>
-        <p style="font-size:0.875rem;color:rgba(248,240,216,0.7);line-height:1.6;margin:0;">Every BuildFlow instance is configured to match your business — your trade categories, project types, branding, and workflow — before it ever goes live. No generic templates.</p>
-      </div>
-
-      <a href="#contact" class="bf-cta">
-        Get BuildFlow — Built for Your Business
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-      </a>
-    </div>
-
-    <div class="bf-screen">
-      <div class="bf-screen-bar">
-        <div class="bf-dot"></div>
-        <div class="bf-dot"></div>
-        <div class="bf-dot"></div>
-        <span class="bf-screen-title">buildflow — project dashboard</span>
-      </div>
-      <div class="bf-screen-body">
-        <div class="bf-stat-row">
-          <div class="bf-stat">
-            <div class="bf-stat-num">6</div>
-            <div class="bf-stat-lbl">Active Projects</div>
-          </div>
-          <div class="bf-stat">
-            <div class="bf-stat-num">$284k</div>
-            <div class="bf-stat-lbl">Total Budget</div>
-          </div>
-          <div class="bf-stat">
-            <div class="bf-stat-num">23</div>
-            <div class="bf-stat-lbl">Open Tasks</div>
-          </div>
-        </div>
-
-        <div class="bf-project-list">
-          <div class="bf-project-row">
-            <div>
-              <div class="bf-project-name">123 Oak Street Rehab</div>
-              <div class="bf-project-meta">Budget: $68,000 · 14 tasks</div>
-            </div>
-            <span class="bf-pill bf-pill-active">Active</span>
-          </div>
-          <div class="bf-project-row">
-            <div>
-              <div class="bf-project-name">Maple Ave Kitchen Reno</div>
-              <div class="bf-project-meta">Budget: $42,500 · 8 tasks</div>
-            </div>
-            <span class="bf-pill bf-pill-review">In Review</span>
-          </div>
-          <div class="bf-project-row">
-            <div>
-              <div class="bf-project-name">Pine Street Flip</div>
-              <div class="bf-project-meta">Budget: $91,000 · 21 tasks</div>
-            </div>
-            <span class="bf-pill bf-pill-active">Active</span>
-          </div>
-          <div class="bf-project-row">
-            <div>
-              <div class="bf-project-name">Cedar Road Full Gut</div>
-              <div class="bf-project-meta">Budget: $55,200 · 6 tasks</div>
-            </div>
-            <span class="bf-pill bf-pill-done">Complete</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- ── CONTACT ── -->
 <section id="contact">
   <div class="contact-wrapper">
@@ -1364,7 +1047,6 @@
 </footer>
 
 <script>
-  window.addEventListener("load", function() {
   const sequences = [
     [
       { type: 'prompt', text: '$ weblina build --client "main-street-bakery"' },
@@ -1411,7 +1093,7 @@
     setTimeout(() => { seqIdx = (seqIdx + 1) % sequences.length; runSequence(sequences[seqIdx]); }, delay + 2800);
   }
 
-  setTimeout(() => runSequence(sequences[0]), 500);
+  runSequence(sequences[0]);
 
   // Contact form
   const APPS_SCRIPT_URL = 'YOUR_GOOGLE_APPS_SCRIPT_URL_HERE';
@@ -1444,7 +1126,6 @@
       submitBtn.innerHTML = `<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message`;
     }
   });
-  }); // end load
 </script>
 </body>
 </html>
